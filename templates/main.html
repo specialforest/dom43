@@ -1,0 +1,655 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/strict.dtd">
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Мой Дом43 - Поиск недвижимости</title>
+    <meta name="distribution" content="global">
+    <meta name="resource-type" content="document">
+    <meta name="document-state" content="dynamic">
+    <meta name="revisit-after" content="1 days">
+    <link rel="shortcut icon" href="http://static.gorodkirov.ru/sites/gorodkirov/images/menu/dom.gif">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <link rel="stylesheet" href="static/stylesheet.css" type="text/css" title="Forum CSS"
+    media="screen">
+    <link rel="stylesheet" type="text/css" href="static/jquery.lightbox-0.5.css">
+    <link rel="stylesheet" type="text/css" href="static/ui.totop.css">
+    <script type="text/javascript" src="static/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+      var $j = jQuery;
+    </script>
+    <script type="text/javascript" src="static/jquery.easing.1.3-min.js"></script>
+    <link rel="stylesheet" href="static/stat1.css" type="text/css">
+    <script type="text/javascript" src="static/openw.js"></script>
+    <script type="text/javascript" src="static/jquery.lightbox-0.5.pack.js"></script>
+    <script type="text/javascript" src="static/jquery.hint.js"></script>
+    <script type="text/javascript" src="static/jquery.ui.totop.min.js"></script>
+    <script type="text/javascript">
+      $j(function () {
+        $j('input[title!=""]').not('.no-hint input').hint();
+        $j('a[rel*=lightbox]').lightBox({
+          imageLoading: 'http://static.gorodkirov.ru/js/jquery/plugins/lightbox/images/lightbox-ico-loading.gif',
+          imageBtnPrev: 'http://static.gorodkirov.ru/js/jquery/plugins/lightbox/images/lightbox-btn-prev.gif',
+          imageBtnNext: 'http://static.gorodkirov.ru/js/jquery/plugins/lightbox/images/lightbox-btn-next.gif',
+          imageBtnClose: 'http://static.gorodkirov.ru/js/jquery/plugins/lightbox/images/closelabel_ru.png',
+          imageBlank: 'http://static.gorodkirov.ru/js/jquery/plugins/lightbox/images/lightbox-blank.gif',
+          txtImage: 'Фото',
+          txtOf: 'из'
+        });
+
+        $j().UItoTop({
+          text: 'Вверх',
+          scrollSpeed: 1200,
+          easingType: 'easeOutQuart'
+        });
+      });
+    </script>
+    <!--[if lt IE 7]>
+      <![if gte IE 5.5]>
+        <script type='text/javascript' src='/js/fixpng.js'></script>
+        <style type="text/css">
+          .iePNG, img {
+            filter:expression(fixPNG(this));
+          }
+          .iePNG a {
+            position: relative;
+          }
+        </style>
+      <![endif]>
+    <![endif]-->
+    <!--[if lt IE 7]>
+      <script type="text/javascript" src="/js/csshover.htc"></script>
+    <![endif]-->
+    <script type="text/javascript" src="static/prototype.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <link rel="stylesheet" type="text/css" href="static/board.css">
+    <script type="text/javascript" src="static/board.js"></script>
+    <script type="text/javascript" src="static/autocomplete.js"></script>
+    <script type="text/javascript" src="static/mustache.js"></script>
+    <script type="text/javascript" src="static/my.js"></script>
+  </head>
+  
+  <body class="p180">
+    <div id="page-aligner" align="center">
+      <div class="page_width" style="margin: 0 auto; padding-top: 1px; text-align:left; position: relative;">
+        <div id="autocomplete_container">
+          <div style="position: absolute; top: 670px; left: 164px;" id="anonymous_element_1">
+            <div class="autocomplete-w1">
+              <div class="autocomplete-w1">
+                <div class="autocomplete" id="Autocomplete_microregion" style="display: none; width: 204px; max-height: 300px;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 696px; left: 164px;" id="anonymous_element_2">
+            <div class="autocomplete-w1">
+              <div class="autocomplete-w1">
+                <div class="autocomplete" id="Autocomplete_street" style="display: none; width: 204px; max-height: 300px;"></div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="padding">
+          <div id="search_form" class="form_container">
+            <form method="get" action="">
+              <div class="input" id="b_id_row">
+                <label for="b_id">№ объявления</label>
+                <input type="text" id="b_id" name="b_id">
+                <input type="submit" value="Показать">
+              </div>
+            </form>
+            <form id="form" method="get" action="">
+              <div>
+                <input type="hidden" name="object_type" value="0">
+                <input type="hidden" name="operation" value="0">
+                <input type="hidden" name="user_id" value="">
+                <input type="hidden" name="view" value="table">
+              </div>
+              <div class="reset_float"><br></div>
+              <div class="input">
+                <label for="start_id">Start</label>
+                <input id="start_id" name="start" value="0">
+              </div>
+              <div class="input" id="object_row">
+                <label for="object_id">Объект</label>
+                <select id="object_id" name="object_id" onchange="search_object_change(this);">
+                  <option value="0"></option>
+                  <option value="61">1/2 дома</option>
+                  <option value="62">1/3 дома</option>
+                  <option value="63">1/4 дома</option>
+                  <option value="64">1/8 дома</option>
+                  <option value="8">дача</option>
+                  <option value="7">дом</option>
+                  <option selected="selected" value="4">квартира</option>
+                  <option value="3">комната</option>
+                  <option value="6">коттедж</option>
+                  <option value="68">сад</option>
+                </select>
+                <img src="static/ok.png" class="ok_img">
+              </div>
+              <fieldset title="Адрес" id="address_group">
+                <legend>Адрес</legend>
+                <div id="base_address">
+                  <div class="input" id="oblast_row">
+                    <label for="oblast_id">Область</label>
+                    <select id="oblast_id" name="oblast_id" onchange="search_oblast_change(this);">
+                      <option value="0"></option>
+                      <option value="70">Агинский Бурятский АО</option>
+                      <option value="1">Адыгея Респ</option>
+                      <option value="3">Алтай Респ</option>
+                      <option value="17">Алтайский край</option>
+                      <option value="22">Амурская обл</option>
+                      <option value="23">Архангельская обл</option>
+                      <option value="24">Астраханская обл</option>
+                      <option value="77">Байконур г</option>
+                      <option value="2">Башкортостан Респ</option>
+                      <option value="25">Белгородская обл</option>
+                      <option value="26">Брянская обл</option>
+                      <option value="82">Бурятия Респ</option>
+                      <option value="27">Владимирская обл</option>
+                      <option value="28">Волгоградская обл</option>
+                      <option value="29">Вологодская обл</option>
+                      <option value="30">Воронежская обл</option>
+                      <option value="86">Дагестан Респ</option>
+                      <option value="69">Еврейская Аобл</option>
+                      <option value="31">Ивановская обл</option>
+                      <option value="4">Ингушетия Респ</option>
+                      <option value="32">Иркутская обл</option>
+                      <option value="5">Кабардино-Балкарская Респ</option>
+                      <option value="33">Калининградская обл</option>
+                      <option value="87">Калмыкия Респ</option>
+                      <option value="34">Калужская обл</option>
+                      <option value="35">Камчатский край</option>
+                      <option value="6">Карачаево-Черкесская Респ</option>
+                      <option value="7">Карелия Респ</option>
+                      <option value="36">Кемеровская обл</option>
+                      <option selected="selected" value="37">Кировская обл</option>
+                      <option value="8">Коми Респ</option>
+                      <option value="38">Костромская обл</option>
+                      <option value="18">Краснодарский край</option>
+                      <option value="39">Курганская обл</option>
+                      <option value="40">Курская обл</option>
+                      <option value="41">Ленинградская обл</option>
+                      <option value="42">Липецкая обл</option>
+                      <option value="43">Магаданская обл</option>
+                      <option value="9">Марий Эл Респ</option>
+                      <option value="10">Мордовия Респ</option>
+                      <option value="83">Москва г</option>
+                      <option value="44">Московская обл</option>
+                      <option value="45">Мурманская обл</option>
+                      <option value="71">Ненецкий АО</option>
+                      <option value="46">Нижегородская обл</option>
+                      <option value="80">Новгородская обл</option>
+                      <option value="47">Новосибирская обл</option>
+                      <option value="48">Омская обл</option>
+                      <option value="49">Оренбургская обл</option>
+                      <option value="50">Орловская обл</option>
+                      <option value="51">Пензенская обл</option>
+                      <option value="52">Пермский край</option>
+                      <option value="19">Приморский край</option>
+                      <option value="53">Псковская обл</option>
+                      <option value="54">Ростовская обл</option>
+                      <option value="55">Рязанская обл</option>
+                      <option value="56">Самарская обл</option>
+                      <option value="81">Санкт-Петербург г</option>
+                      <option value="57">Саратовская обл</option>
+                      <option value="11">Саха /Якутия/ Респ</option>
+                      <option value="58">Сахалинская обл</option>
+                      <option value="79">Свердловская обл</option>
+                      <option value="85">Северная Осетия - Алания Респ</option>
+                      <option value="59">Смоленская обл</option>
+                      <option value="20">Ставропольский край</option>
+                      <option value="72">Таймырский (Долгано-Ненецкий) АО</option>
+                      <option value="60">Тамбовская обл</option>
+                      <option value="12">Татарстан Респ</option>
+                      <option value="61">Тверская обл</option>
+                      <option value="62">Томская обл</option>
+                      <option value="63">Тульская обл</option>
+                      <option value="13">Тыва Респ</option>
+                      <option value="64">Тюменская обл</option>
+                      <option value="14">Удмуртская Респ</option>
+                      <option value="65">Ульяновская обл</option>
+                      <option value="73">Усть-Ордынский Бурятский АО</option>
+                      <option value="21">Хабаровский край</option>
+                      <option value="15">Хакасия Респ</option>
+                      <option value="74">Ханты-Мансийский Автономный округ - Югра АО</option>
+                      <option value="66">Челябинская обл</option>
+                      <option value="78">Чеченская Респ</option>
+                      <option value="67">Читинская обл</option>
+                      <option value="16">Чувашская Респ</option>
+                      <option value="75">Чукотский АО</option>
+                      <option value="76">Ямало-Ненецкий АО</option>
+                      <option value="68">Ярославская обл</option>
+                    </select>
+                    <img src="static/ok.png" class="ok_img">
+                  </div>
+                  <div class="input" id="town_row">
+                    <label for="town_id">Город</label>
+                    <select id="town_id" name="town_id" onchange="return search_town_change(this);">
+                      <option value="0"></option>
+                      <option value="107356">Белая Холуница г</option>
+                      <option value="107583">Вятские Поляны г</option>
+                      <option value="107848">Зуевка г</option>
+                      <option selected="selected" value="99511">Киров г</option>
+                      <option value="108075">Кирово-Чепецк г</option>
+                      <option value="107434">Кирс г</option>
+                      <option value="108330">Котельнич г</option>
+                      <option value="108742">Луза г</option>
+                      <option value="108830">Малмыж г</option>
+                      <option value="108938">Мураши г</option>
+                      <option value="109077">Нолинск г</option>
+                      <option value="109165">Омутнинск г</option>
+                      <option value="109494">Орлов г</option>
+                      <option value="105312">Первомайский пгт</option>
+                      <option value="110015">Слободской г</option>
+                      <option value="96573">Советск г</option>
+                      <option value="107584">Сосновка г</option>
+                      <option value="110441">Уржум г</option>
+                      <option value="110839">Яранск г</option>
+                    </select>
+                    <img src="static/ok.png" class="ok_img">
+                  </div>
+                  <div class="input" id="microregion_row">
+                    <label for="microregion_id">Нас. пункт</label>
+                    <input type="text" id="microregion" value="" autocomplete="off">
+                    <input type="hidden" id="microregion_id" name="microregion_id" value="0">
+                  </div>
+                  <script type="text/javascript">
+                    changeMicroregionAcUrl();
+                  </script>
+                  <div class="input" id="street_row">
+                    <label for="street_id">Улица</label>
+                    <input type="text" id="street" value="" autocomplete="off">
+                    <input type="hidden" id="street_id" name="street_id" value="0">
+                  </div>
+                  <script type="text/javascript">
+                    changeStreetAcUrl();
+                  </script>
+                </div>
+                <div id="admin_regions_block">
+                  <label>Микрорайоны<span id="admin_region_img"><img src="static/ok.png" class="ok_img"></span>
+                  </label>
+                  <div id="admin_regions_row">
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226337">Автовокзал</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226353">Вересники</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226357">ГАИ</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226394">Дв. Пионеров</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226352">Дв.Пионеров</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226343">Дом Техники</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226342">Дружба</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226335">ЖДВ</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226349">Зональный</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226347">Искож</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226359">Киров-2</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226334">Коминтерн</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226344">Красное</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226355">Красный Химик</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226340">Лепсе</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226348">Макарье</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226336">Нововятск</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226333">Новый</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226350">ОЦМ</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226354">Порошино</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226351">Радужный</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226345">Сл.Дымково</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226358">Сошени</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226346">Филейка</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226339">Ц.рынок</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226338">Центр</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226356">Чистые пруды</label>
+                    <label>
+                      <input type="checkbox" name="admin_region_id" onclick="adminRegionClick(this);"
+                      value="226341">ЮЗР</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset title="Количество комнат" class="mini" id="rooms_row" style="">
+                <legend>Кол. комнат</legend>
+                <label>1
+                  <br>
+                  <input type="checkbox" name="rooms" checked="checked" id="rooms1" value="1">
+                </label>
+                <label>2
+                  <br>
+                  <input type="checkbox" name="rooms" checked="checked" id="rooms2" value="2">
+                </label>
+                <label>3
+                  <br>
+                  <input type="checkbox" name="rooms" id="rooms3" value="3">
+                </label>
+                <label>4
+                  <br>
+                  <input type="checkbox" name="rooms" id="rooms4" value="4">
+                </label>
+                <label>5
+                  <br>
+                  <input type="checkbox" name="rooms" id="rooms5" value="5">
+                </label>
+                <label>&gt;
+                  <br>
+                  <input type="checkbox" id="rooms_over" value="1" name="rooms_over">
+                </label>
+              </fieldset>
+              <fieldset title="Этаж" class="mini" id="search_floor_row" style="">
+                <legend>Этаж</legend>
+                <label>
+                  <input type="checkbox" name="floor" value="1">кроме первого</label>
+                <label>
+                  <input type="checkbox" name="floor" value="2">кроме последнего</label>
+              </fieldset>
+              <fieldset title="Площадь участка" class="mini" id="search_land_area_row"
+              style="display: none;">
+                <legend>Площадь участка в сотках</legend>
+                <label>от:
+                  <input type="text" name="min_land_area" value="0">
+                </label>
+                <label>до:
+                  <input type="text" name="max_land_area" value="0">
+                </label>
+              </fieldset>
+              <fieldset title="Цена" class="mini" id="search_price_row">
+                <legend>Цена, т.руб</legend>
+                <label>от:
+                  <input type="text" name="min_price" value="1500">
+                </label>
+                <label>до:
+                  <input type="text" name="max_price" value="2300">
+                </label>
+              </fieldset>
+              <div style="display: none;">
+                <div style="position:relative;"></div>
+              </div>
+              <div class="reset_float"></div>
+              <fieldset title="Дополнительно" id="search_addon_row">
+                <legend id="addon_legend" onclick="showAddon(&#39;search_addon_container&#39;)"><u>Дополнительно</u>
+                  <img src="static/ok.png" class="ok_img">
+                </legend>
+                <div id="search_addon_container" style="display: none;">
+                  <div id="search_area_block">
+                    <fieldset title="Общая площадь" class="mini" id="search_area_row">
+                      <legend>Общая площадь</legend>
+                      <label>от:
+                        <input type="text" name="min_area" value="0">
+                      </label>
+                      <label>до:
+                        <input type="text" name="max_area" value="0">
+                      </label>
+                    </fieldset>
+                    <fieldset title="Жилая площадь" class="mini" id="search_living_area_row">
+                      <legend>Жилая площадь</legend>
+                      <label>от:
+                        <input type="text" name="min_living_area" value="0">
+                      </label>
+                      <label>до:
+                        <input type="text" name="max_living_area" value="0">
+                      </label>
+                    </fieldset>
+                    <fieldset title="Площадь кухни" class="mini" id="search_kitchen_area_row">
+                      <legend>Площадь кухни</legend>
+                      <label>от:
+                        <input type="text" name="min_kitchen_area" value="0">
+                      </label>
+                      <label>до:
+                        <input type="text" name="max_kitchen_area" value="0">
+                      </label>
+                    </fieldset>
+                  </div>
+                  <div id="material_block" class="multiselect">
+                    <label id="materail_label">Материал
+                      <img src="static/ok.png" class="ok_img">
+                    </label>
+                    <div id="search_maretial_row">
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        checked="checked" value="18">блочный</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="19">бревенчатый</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="20">брус</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="21">деревянный</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="303">другой</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="22">железобетон</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="299">каменный</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        checked="checked" value="2">кирпич</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="23">металлоконструкция</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        checked="checked" value="17">монолитный</label>
+                      <label>
+                        <input type="checkbox" name="material_id" onclick="materialClick(this);"
+                        value="16">панель</label>
+                    </div>
+                  </div>
+                  <div id="planning_block" class="multiselect">
+                    <label id="planning_label">Планировка
+                      <img src="static/ok.png" class="ok_img">
+                    </label>
+                    <div id="search_planning_row">
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="31">бывшее общежитие</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="30">гостиного типа</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="301">другая</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        checked="checked" value="8">индивидуальная</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="300">квартира-студия</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="32">коммунальная</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="313">малогобарит</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="28">малосемейка</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        checked="checked" value="10">новая</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="446">общежитие</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="310">полногабарит</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        checked="checked" value="9">свободная</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="311">улучшенка</label>
+                      <label>
+                        <input type="checkbox" name="planning_id" onclick="planningClick(this);"
+                        value="26">хрущевка</label>
+                    </div>
+                  </div>
+                  <div id="sanuzel_block" class="multiselect">
+                    <label id="sanuzel_label">Санузел</label>
+                    <div id="search_sanuzel_row">
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="58">2 санузла</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="61">без ванны</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="59">без санузла</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="62">биотуалет</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="220">душевая кабина</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="349">прачечная</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="56">раздельный</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="57">совместный</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="131">теплый туалет</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="60">только душ</label>
+                      <label>
+                        <input type="checkbox" name="sanuzel_id" onclick="sanuzelClick(this);"
+                        value="63">холодный</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset title="Сортировка" id="search_sort_row" style="position: relative;">
+                <legend>Сортировка</legend>
+                <label>Упорядочить по:
+                  <select name="sort">
+                    <option value="0" selected="selected">дате</option>
+                    <option value="1">цене</option>
+                    <option value="2">объекту</option>
+                    <option value="3">общей площади</option>
+                  </select>
+                </label>
+                <label>
+                  <input type="checkbox" name="sort_dir" value="1">по возрастанию</label>
+                <label>
+                  <input type="checkbox" name="with_photo" value="1">только с фото</label>
+              </fieldset>
+              <div class="input submit_row">
+                <a href="#result" onclick="SearchSubmit(this, 'new');"><span>Найти</span></a>
+              </div>
+            </form>
+          </div>
+          <div id="search_preview">
+            <div id="preview_loading" style="display: none;">Загрузка...</div>
+            <div id="search_preview_container"></div>
+            <div class="reset_float"></div>
+            <script type="text/javascript">
+              update_all_ok_imgs();
+            </script>
+
+            <a name="result"></a>
+
+            <div style="position: relative; zoom: 1;">
+              <div id="dom_overlay" style="display: none;"></div>
+              <div id="loading1" style="display: none;">Загрузка...</div>
+              <div id="loading2" style="display: none;">Загрузка...</div>
+              <div id="result_container">
+                <div id="search_results">
+                  <div class="reset_float"></div>
+                  <table class="boards_table">
+                    <tbody>
+                      <tr>
+                        <th>Объект / Адрес</th>
+                        <th>Район</th>
+                        <th>Этажность /
+                          <br>материал</th>
+                        <th>Площадь,
+                          <br>кв.м.</th>
+                        <th>Площадь
+                          <br>земли</th>
+                        <th>Цена</th>
+                        <th>Фото</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="yandex_map_container" style="display: none;">
+            <div id="precision"></div>
+            <div id="close_map"><a href="http://www.dom43.ru/estate_base/#" onclick="return CloseMap();">Закрыть</a>
+            </div>
+            <div id="yandex_map"></div>
+          </div>
+          <div class="submit_row">
+            <a href="#" onclick="SearchSubmit(this, 'more'); return false;"><span>Ещё</span></a>
+            <a href="#result" onclick="SearchSubmit(this, 'next');"><span>Новая страница</span></a>
+          </div>
+          <a name="footer"></a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a href="#" id="toTop" title="Вверх" style="display: none;"><span id="toTopHover" style="opacity: 0;"></span>Вверх</a>
+    </div>
+  </body>
+
+</html>

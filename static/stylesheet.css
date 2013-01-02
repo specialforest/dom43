@@ -1,0 +1,700 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+.zf-paragraph img
+{
+ max-width:620px;
+}
+
+div.zforum-container {
+  border:0;
+  width:100%;
+  margin:10px auto 10px auto;
+  background-color:#ffffff;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size:0.85em;
+  /*letter-spacing:0.1em;*/
+  color: #000000;
+}
+
+table.work-area-content {
+  background-color:transparent;
+  width:100%;
+  margin:0 auto 0 auto;
+}
+
+td.zf-header-left a#logo-link {
+    position:absolute;
+    top:20px;
+    left:50px;
+    width:320px;
+    height:80px;
+    /* border:1px solid red; - testing - */
+    background-color:transparent;
+}
+
+td.zf-header-left {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/header_zforum.gif);
+    background-position:top left;
+    background-repeat:no-repeat;
+    height:100px;
+    /*width:100%;*/
+}
+
+td.zf-header-right {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/header_rightcap.gif);
+    background-position:top left;
+    background-repeat:no-repeat;
+    height:100px;
+    width:25px;
+}
+
+td.zf-header-right div {
+    height:100px;
+    font-size:0;
+}
+
+td.zf-header-sep-left {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/contentshadow.gif);
+    background-position:top left;
+    background-repeat:no-repeat;
+    height:3px;
+}
+
+td.zf-header-sep-right {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/sidebarshadow.gif);
+    background-position:top left;
+    background-repeat:no-repeat;
+    height:3px;
+    width:206px;
+}
+
+td.zf-header-sep-left div, td.zf-header-sep-right div {
+    height:3px;
+    font-size:3px;
+}
+
+div.zf-header {
+  margin-bottom:10px;
+}
+
+div.zf-header-content {
+  padding:3px;
+}
+
+
+td.zf-content-left {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/leftside.gif);
+    background-position:top left;
+    background-repeat:repeat-y;
+    vertical-align:top;
+}
+
+td.zf-content-right {
+    background-color: #eeeff1;
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/rightnav_content.gif);
+    background-position:top left;
+    background-repeat:repeat-y;
+    vertical-align:top;
+    width:206px;
+}
+
+div.zf-footer {
+  text-align:center;
+  vertical-align:middle;
+  font-size:0.8em;
+  background-color:transparent;
+}
+
+div.indent {
+  margin-left:15px;
+  background-color:transparent;
+}
+
+div.separator {
+  margin:0 0 20px 0;
+}
+
+.sep {
+  font-size:smaller;
+}
+
+div.zf-paragraph {
+  margin:20px 0 20px 0;
+}
+
+div.zf-container {
+  background-color:#ffffff;
+}
+
+div.fancy, div.fancy-left {
+  color:#000000;
+  font-size:120%;
+  font-weight:normal;
+  background-color: #ffffff;
+  border-bottom:1px solid #c8c8c8;
+  border-top:1px solid #c8c8c8;
+  text-align:left;
+  padding-left:10px;
+  margin-bottom:20px;
+}
+
+div.fancy-right {
+  font-size:120%;
+  color:#000000;
+  font-weight:normal;
+  background-color: #ffffff;
+  border-bottom:1px solid #c8c8c8;
+  border-top:1px solid #c8c8c8;
+  text-align:right;
+  padding-right:10px;
+  margin-bottom:20px;
+}
+
+td.zf-footer-bottomline-left {
+    height:1px;
+    background-image: url(http://www.gorodkirov.ru/zforum/zImages/bottomline_left.gif);
+    background-position:top left;
+    background-repeat:no-repeat;
+}
+
+td.zf-footer-bottomline-right {
+    height:1px;
+    background-image: url(http://www.gorodkirov.ru/zforum/zImages/bottomline_right.gif);
+    background-position:top left;
+    background-repeat:no-repeat;
+    width:5px;
+}
+
+td.zf-footer-bottomline-left div, td.zf-footer-bottomline-right div {
+    height:1px;
+    font-size:3px;
+}
+
+
+td.zf-footer-left {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/bottom.gif);
+    background-position:bottom left;
+    background-repeat:no-repeat;
+    height:3em;
+}
+
+td.zf-footer-right {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/bottom_rightcap.gif);
+    background-position:bottom left;
+    background-repeat:no-repeat;
+    width:25px;
+    height:3em;
+}
+
+td.work-area-content-td {
+  background-color:#ffffff;
+  border:1px solid #c8c8c8;
+  /*padding:15px;*/
+  vertical-align:top;
+}
+
+div.rightnav-content-top-OLD {
+  font-size:smaller;
+  padding:3px;
+  border:1px solid #c8c8c8;
+  background-color:#f0f0f0;
+}
+
+div.rightnav-content-top {
+    font-size:0.75em;
+    background-color: #d9e8ff;
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/rightnav_top.gif);
+    background-position:top left;
+    background-repeat:no-repeat;
+    width:180px;
+ /*   height:40px; */
+}
+
+div.rightnav-content-top div {
+    padding:5px;
+}
+
+
+div.rightnav-content-light {
+  font-size:0.8em;
+    background-color: #ffffff;
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/rightnav_body.gif);
+    background-position:top left;
+    background-repeat:repeat-y;
+    width:180px;  
+}
+
+div.rightnav-content-light-content {
+    padding:5px;
+}
+div.rightnav-content-light *
+{
+ font-size: 11px !important;
+}
+
+div.rightnav-content-dark {
+  font-size:0.8em;
+  padding:3px;
+  background-color:#f0f0f0;
+  border-left:1px solid #c8c8c8;
+  border-right:1px solid #c8c8c8;
+  border-bottom:1px solid #c8c8c8;
+}
+
+div.rightnav-content-bottom {
+    background-image:url(http://www.gorodkirov.ru/zforum/zImages/rightnav_bottom.gif);
+    background-position:bottom left;
+    background-repeat:no-repeat;
+    width:180px;
+}
+
+div.rightnav-separator {
+  margin-bottom:3px;
+}
+
+div.rightnav-separator-shade {
+  margin-bottom:3px;
+  background-color:#fafafa;
+  border-top:1px solid #f0f0f0;
+  border-bottom:1px solid #f0f0f0;
+}
+
+img.imgclear {
+  border:0px;
+}
+
+.rss {
+  text-align:right;
+  padding:2px;
+}
+
+.zforum-container a.rss-link:active, .zforum-container a.rss-link:link, .zforum-container a.rss-link:visited {
+  color:white;
+  font-weight:bold;
+  background-color:orange;
+  text-decoration:none; 
+}
+
+.zforum-container a.rss-link:hover {
+  color:#fafafa;
+  font-weight:bold;
+  background-color:orange;
+  text-decoration:none; 
+}
+
+
+.zforum-container a:active, .zforum-container a:link, .zforum-container a:visited {
+  color: #466dab;
+  background-color:transparent;
+  text-decoration:none; 
+}
+
+.zforum-container a:hover {
+  color: #B22222;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.zforum-container a.linkb:active, .zforum-container a.linkb:link, .zforum-container a.linkb:visited {
+    font-size:100%;
+    font-weight:bold;
+    color: #466dab;
+    background-color:transparent;
+    text-decoration:none; 
+}
+
+.zforum-container a.linkb:hover {
+    font-size:100%;
+    font-weight:bold;
+    color: #B22222;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.zforum-container a.linkb-new:active, .zforum-container a.linkb-new:link, .zforum-container a.linkb-new:visited {
+  font-weight:bold;
+  color: red;
+  background-color:transparent;
+  text-decoration:none; 
+}
+
+.zforum-container a.linkb-new:hover {
+  font-weight:bold;
+  color: #B22222;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.zforum-container a.link-new:active, .zforum-container a.link-new:link, .zforum-container a.link-new:visited {
+  color: red;
+  background-color:transparent;
+  text-decoration:none; 
+}
+
+.zforum-container a.link-new:hover {
+  color: #B22222;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a.smallb:active, a.smallb:link, a.smallb:visited {
+ /* font-size:smaller; */
+  font-weight:bold;
+  color: #466dab;
+  background-color:transparent;
+  text-decoration:none; 
+}
+
+a.smallb:hover {
+ /* font-size:smaller; */
+  font-weight:bold;
+  color: #B22222;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.zforum-container a.message_count
+{
+ color:black;
+}
+
+div.subnav {
+  color:#000000;
+  background-color:#fafafa;
+  border:1px solid #c8c8c8;
+  padding:3px;
+  margin-bottom:5px;
+  text-align:center;;
+  font-size:smaller;
+  font-weight:bold;
+}
+
+div.breadcrumbs {
+  font-size:smaller;
+  color:#000000;
+  background-color:#fafafa;
+  border-top:1px solid #c8c8c8;
+  border-bottom:1px solid #c8c8c8;
+  padding-left:3px;
+  margin-bottom:15px;
+  margin-top: 5px
+}
+
+.highlight {
+  background-color:yellow;
+}
+
+a.breadcrumbs:active, a.breadcrumbs:link, a.breadcrumbs:visited {
+  color:#466dab;
+  background-color:transparent;
+  font-weight:bold;
+  text-decoration:none; 
+}
+
+a.breadcrumbs:hover {
+  color:#B22222;
+  background-color:transparent;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a.nolink:link, a.nolink:active, a.nolink:visited, a.nolink:hover {
+  text-decoration:none;
+}
+
+.zforum-container h1 {
+  color:#000000;
+  font-weight:normal;
+  background-color:#ffffff;
+  font-size:160%;
+}
+
+.zforum-container h2 {
+  color:#000000;
+  font-weight:normal;
+  background-color:transparent;
+  font-size:140%;
+}
+
+h2.fancy {
+  color:#000000;
+  font-weight:normal;
+  background-color:#fafafa;
+  font-size:140%;
+  border-bottom:1px solid #c8c8c8;
+  border-top:1px solid #c8c8c8;
+  text-align:right;
+  padding-right:10px;
+}
+
+.zforum-container h3 {
+  color:#000000;
+  background-color:#ffffff;
+  font-weight:normal;
+  font-size:130%;
+}
+
+.zforum-container h4 {
+  color:#000000;
+  background-color:#ffffff;
+  font-size:110%;
+}
+
+.zforum-container blockquote, p.box3d, div.box3d {
+  font-size:smaller;
+  color: #000000;
+  background-color: #ffffff;  
+  border-top:1px solid #f0f0f0;
+  border-left:1px solid #f0f0f0;
+  border-bottom:1px solid #c8c8c8;
+  border-right:1px solid #c8c8c8;
+  width:95%;
+  margin: 5px auto 5px auto;
+  padding: 3px 6px 3px 5px;
+}
+
+.zforum-container div.hr {
+  height:1px;
+  background-color:#c8c8c8;
+  width:100%;
+  margin:3px auto 3px auto;
+  border:0px;
+}
+
+.zforum-container div.hr hr {
+  display: none;
+}
+
+div.topic-summary {
+  font-size:smaller;
+  background-color:transparent;
+}
+
+
+/* 
+div.standout, p.standout {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  padding:10px 15px 10px 15px;
+  margin-right:10px;
+  border-right: 2px solid #c8c8c8;
+  border-bottom: 2px solid #c8c8c8;
+  background-color:#fafafa;
+}
+*/
+
+div.quote, div.standout, p.standout {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  padding:10px 15px 10px 15px;
+  margin:5px;
+  border:1px solid #c8c8c8;
+  background-color:#fafafa;
+}
+
+div.code {
+  font-family: Courier, "Courier New", monospace;
+  font-size:12px;
+  color: #000000;
+  background-color: #f0f0f0;  
+  border-top:1px solid #c8c8c8;
+  border-left:1px solid #c8c8c8;
+  border-bottom:1px solid #c8c8c8;
+  border-right:1px solid #c8c8c8;
+  width:95%;
+  margin: 5px auto 5px auto;
+  padding: 5px;
+  max-height:250px;
+  overflow:auto;
+  white-space:pre;
+}
+
+pre.code {
+  color: #000000;
+  background-color: #f0f0f0;  
+  border-top:1px solid #c8c8c8;
+  border-left:1px solid #c8c8c8;
+  border-bottom:1px solid #c8c8c8;
+  border-right:1px solid #c8c8c8;
+  width:95%;
+  margin:5px auto 5px auto;
+  max-height:250px;
+  overflow:auto;
+}
+
+pre.pre {
+  border-top:2px solid #c8c8c8;
+  padding-top:15px;
+  white-space:pre;
+}
+
+.zf-error, .error {
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  color:red;
+  font-weight:bold;
+}
+
+.zf-warning {
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  color:red;
+  background-color:#f0f0f0;
+  font-size:smaller;
+  text-align:center;
+}
+
+.important {
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  color:red;
+}
+
+div.preview {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  width:90%;
+  margin:10px auto 10px auto;
+  border:1px dashed #000000;
+  padding:10px;
+}
+
+div.small-content {
+  font-size:0.85em;
+}
+
+.formelem, .zforum-container textarea, .zforum-container select {
+  color:#000000;
+  background-color:#fafafa;
+  border:1px solid #c8c8c8;
+  padding:1px;
+}
+
+.formelem-small {
+  font-size:smaller;
+  color:#000000;
+  background-color:#fafafa;
+  border:1px solid #c8c8c8;
+  padding:1px;
+}
+
+.zforum-container fieldset {
+  border:0;
+  margin:5px 0 5px 0;
+  padding:0;
+}
+
+.quota-container {
+  border:1px solid #c8c8c8;
+}
+
+/* TABLE UI */
+
+.zforum-container td, .zforum-container th {
+    font-size:100%;
+}
+
+.zforum-container th 
+{
+ vertical-align:middle;
+}
+
+table.zf-table {
+  border-top-color: #c8c8c8;
+  border-right-color: #c8c8c8;
+  border-bottom-color: #c8c8c8;
+  border-left-color: #c8c8c8;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+table.zf-table td, table.zf-table th {padding: 2px;}
+.shadedarker {
+  border: 1px outset #ffffff;
+  color: #000000;
+  background-color: #f0f0f0;
+  margin-top: -1em;
+  margin-bottom: -1em;
+}
+
+.shadelight {
+  border: 1px outset #ffffff;
+  color: #000000;
+  background-color: #ffffff;
+  margin-top: -1em;
+  margin-bottom: -1em;
+}
+
+.shadedark {
+  border: 1px outset  #ffffff;
+  color: #000000;
+  background-color:#fafafa;
+  margin-top: -1em;
+  margin-bottom: -1em;
+}
+
+.cell3d {
+  border-top-color: #ffffff;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: #c8c8c8;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: #c8c8c8;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding:5px;
+  vertical-align:top;
+}
+
+.cell3d-mid {
+  border-top-color: #ffffff;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: #c8c8c8;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: #c8c8c8;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding:5px;
+  vertical-align:middle;
+}
+
+
+.anonymous
+{
+ color: #606060;
+}
+.insertable.anonymous-viewer .anonymous
+{
+ color: #808080;
+}
+.insertable.anonymous-viewer .anonymous div.zf-paragraph
+{
+ font-size: 8pt;
+}
+
+
+.anonymous-avatar
+{
+ display: block;
+ width: 130px; height: 50px;
+ background: url(../zImages/static_anonymous_avatar.png) no-repeat left top;
+}
+.insertable.anonymous-viewer .anonymous-avatar
+{
+ background: url(../zImages/anonymous_avatar.gif) no-repeat left top;
+}

@@ -1,0 +1,39 @@
+<tr class="first{{^old}} new{{/old}}">
+  <td class="left">
+    <div class="object"><b>Объект:</b> <strong>{{object}}</strong></div>
+    <div class="planning"><b>Планировка:</b> {{planning}}</div>
+    <div class="address"><b>Адрес:</b> {{address}}</div>
+  </td>
+  <td>{{zone}}</td>
+  <td>
+    {{floor}}<br>
+    {{material}}
+  </td>
+  <td>{{area_total}} / {{area_living}} / {{area_kitchen}}</td>
+  <td></td>
+  <td class="right">&nbsp;
+     <strong>{{price}}</strong> т.руб.<br>
+     {{price_per_meter}} р/м2
+  </td>
+  <td class="photo">
+    {{#has_photo}}
+    <a href="http://www.dom43.ru/estate_base/view_photos?b_id={{number}}" target="_blank">{{photo_count}} фото</a>
+    {{/has_photo}} 
+    &nbsp;
+  </td>
+</tr>
+<tr class="last">
+  <td class="left" colspan="7" b_id="{{number}}">
+    <div class="number"><a href="http://www.dom43.ru/estate_base?b_id={{number}}" target="_blank">№{{number}}</a></div>
+    <div class="date"><b>Дата:</b> {{date}}</div>
+    <div class="addon"><a href="http://www.dom43.ru/estate_base/#" onclick="return false;">Дополнительно / Контакты</a>
+      <div class="add_container">
+        <p>{{extra}}</p>
+        <span>{{contact}}</span>
+      </div>
+    </div>
+    <div class="map">
+      <a href="http://www.dom43.ru/estate_base/#" onclick="return ShowOnMap(this);" title="Показать на карте (не работает в IE)">Карта</a>
+    </div>
+  </td>
+</tr>
