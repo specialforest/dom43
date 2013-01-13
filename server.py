@@ -2,7 +2,8 @@ import copy
 import urllib
 from bottle import *
 from pymongo import Connection
-from site_parser import parse_page
+
+from dom43 import parser
 
 
 Flats = None
@@ -24,7 +25,7 @@ def scripts_handle(path_tail):
 
 @route('/search')
 def search_handler():
-	entries = parse_page(request.query_string)
+	entries = parser.parse_page(request.query_string)
 
 	global Flats
 	numbers_to_indices = { entry['number']: index for index, entry in enumerate(entries) }
